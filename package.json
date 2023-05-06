@@ -1,0 +1,27 @@
+{
+    "name": "app",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start:prod": "tsc && ts-node dist/index.js",
+        "build": "tsc",
+        "start:dev": "npx nodemon ",
+        "start:migrate:prod": "npx prisma migrate deploy && npm run start:prod",
+        "migrate:dev": "npx prisma migrate dev"
+    },
+    "devDependencies": {
+        "@types/node": "^18.13.0",
+        "concurrently": "^7.6.0",
+        "nodemon": "^2.0.20",
+        "ts-node": "^10.9.1",
+        "typescript": "^4.9.5"
+    },
+    "dependencies": {
+        "dotenv": "^16.0.3",
+        "log4js": "^6.9.1",
+        "nats": "^2.13.1",
+        "nats.ws": "^1.14.0",
+        "ts-nats": "^1.2.15",
+        "uuid": "^9.0.0"
+    }
+}
